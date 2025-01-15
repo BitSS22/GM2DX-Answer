@@ -186,10 +186,14 @@
     <ClInclude Include="GMConst.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Monster2.h" />
+    <ClInclude Include="MyRenderer.h" />
+    <ClInclude Include="MyVertex.h" />
     <ClInclude Include="MyCustomRenderer.h">
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="Polygon.h" />
+    <ClInclude Include="TestGameMode.h" />
     <ClInclude Include="TitleHUD.h">
       <SubType>
       </SubType>
@@ -225,10 +229,14 @@
     </ClCompile>
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Monster2.cpp" />
+    <ClCompile Include="MyRenderer.cpp" />
+    <ClCompile Include="MyVertex.cpp" />
     <ClCompile Include="MyCustomRenderer.cpp">
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="TestGameMode.cpp" />
     <ClCompile Include="TitleHUD.cpp">
       <SubType>
       </SubType>

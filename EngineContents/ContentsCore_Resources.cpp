@@ -9,6 +9,7 @@
 #include <EngineCore/EngineMaterial.h>
 #include <EngineCore/EngineTexture.h>
 #include <EngineCore/EngineSprite.h>
+#include "MyVertex.h"
 
 
 
@@ -74,11 +75,6 @@ void UContentsCore::MyGSetting()
 		}
 	}
 
-	{
-		std::shared_ptr<UEngineMaterial> Mat = UEngineMaterial::Create("MyMaterial");
-		Mat->SetVertexShader("TestShader.fx");
-		Mat->SetPixelShader("TestShader.fx");
-	}
 
 	{
 		std::shared_ptr<UEngineMaterial> Mat = UEngineMaterial::Create("MyCollisionDebugMaterial");
@@ -89,5 +85,72 @@ void UContentsCore::MyGSetting()
 		Mat->SetRasterizerState("CollisionDebugRas");
 	}
 
+
+
+
+
+	const FVector Top = { 0.0f, 0.5f, 0.0f, 1.f };
+	const FVector Bottom = { 0.0f, -0.5f, 0.0f, 1.f };
+
+	const FVector Left = { -0.5f, 0.0f, 0.0f, 1.f };
+	const FVector Right = { 0.5f, 0.0f, 0.0f, 1.f };
+	const FVector Front = { 0.0f, 0.0f, -0.5f, 1.f };
+	const FVector Back = { 0.0f, 0.0f, 0.5f, 1.f };
+
+	const FVector RedColor = { 1.f, 0.f, 0.f, 1.f };
+	const FVector MagentaColor = { 1.f, 0.f, 1.f, 1.f };
+	const FVector YellowColor = { 1.f, 1.f, 0.f, 1.f };
+	const FVector GreenColor = { 0.f, 1.f, 0.f, 1.f };
+
+
+	std::vector<MyVertex> Vertexes = {};
+
+	Vertexes.push_back(MyVertex(Top, RedColor));
+	Vertexes.push_back(MyVertex(Front, RedColor));
+	Vertexes.push_back(MyVertex(Left, RedColor));
+
+	Vertexes.push_back(MyVertex(Top, MagentaColor));
+	Vertexes.push_back(MyVertex(Right, MagentaColor));
+	Vertexes.push_back(MyVertex(Front, MagentaColor));
+
+	Vertexes.push_back(MyVertex(Top, RedColor));
+	Vertexes.push_back(MyVertex(Back, RedColor));
+	Vertexes.push_back(MyVertex(Right, RedColor));
+
+	Vertexes.push_back(MyVertex(Top, MagentaColor));
+	Vertexes.push_back(MyVertex(Left, MagentaColor));
+	Vertexes.push_back(MyVertex(Back, MagentaColor));
+
+
+	Vertexes.push_back(MyVertex(Bottom, YellowColor));
+	Vertexes.push_back(MyVertex(Front, YellowColor));
+	Vertexes.push_back(MyVertex(Left, YellowColor));
+
+	Vertexes.push_back(MyVertex(Bottom, GreenColor));
+	Vertexes.push_back(MyVertex(Right, GreenColor));
+	Vertexes.push_back(MyVertex(Front, GreenColor));
+
+	Vertexes.push_back(MyVertex(Bottom, YellowColor));
+	Vertexes.push_back(MyVertex(Back, YellowColor));
+	Vertexes.push_back(MyVertex(Right, YellowColor));
+
+	Vertexes.push_back(MyVertex(Bottom, GreenColor));
+	Vertexes.push_back(MyVertex(Left, GreenColor));
+	Vertexes.push_back(MyVertex(Back, GreenColor));
+
+	UEngineVertexBuffer::Create("MyMesh", Vertexes);
+
+
+	std::vector<unsigned int> Indexes = {};
+
+	for (size_t i = 0; i < Vertexes.size(); ++i)
+		Indexes.push_back(static_cast<unsigned int>(i));
+
+	UEngineIndexBuffer::Create("MyMesh", Indexes);
+	UMesh::Create("MyMesh");
+
+	std::shared_ptr<UEngineMaterial> MyMaterial = UEngineMaterial::Create("MyMaterial");
+	MyMaterial->SetVertexShader("MyShader.fx");
+	MyMaterial->SetPixelShader("MyShader.fx");
 
 }

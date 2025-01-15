@@ -13,4 +13,3 @@ struct FEngineVertex
 	float4 COLOR;
 };
 
-

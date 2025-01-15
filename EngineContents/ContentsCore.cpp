@@ -12,6 +12,7 @@
 #include <EngineCore/EngineGUIWindow.h>
 #include "TitleHUD.h"
 #include "ContentsEditorGUI.h"
+#include "TestGameMode.h"
 
 // #define은 그냥 무조건 복붙
 CreateContentsCoreDefine(UContentsCore);
@@ -38,9 +39,8 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 
 
 	// 주인공 APawn 상속 받으세요.
-	UEngineCore::CreateLevel<ATitleGameMode, APawn, ATitleHUD>("Titlelevel");
-	UEngineCore::CreateLevel<ATileMapGameMode, APawn, AHUD>("TileMapEditor");
-	UEngineCore::OpenLevel("Titlelevel");
+	UEngineCore::CreateLevel<ATestGameMode, APawn, AHUD>("TestLevel");
+	UEngineCore::OpenLevel("TestLevel");
 
 	UEngineGUI::AllWindowOff();
 

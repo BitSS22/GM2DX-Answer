@@ -25,12 +25,24 @@
     <ClInclude Include="Monster2.h">
       <Filter>Title</Filter>
     </ClInclude>
-    <ClInclude Include="GMConst.h" />
     <ClInclude Include="AMon.h">
       <Filter>Title</Filter>
     </ClInclude>
     <ClInclude Include="TitleHUD.h">
       <Filter>HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="TestGameMode.h">
+      <Filter>GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="GMConst.h" />
+    <ClInclude Include="MyVertex.h">
+      <Filter>GameMode\MyVertex</Filter>
+    </ClInclude>
+    <ClInclude Include="MyRenderer.h">
+      <Filter>GameMode\MyVertex</Filter>
+    </ClInclude>
+    <ClInclude Include="Polygon.h">
+      <Filter>GameMode\MyVertex</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +77,18 @@
     <ClCompile Include="TitleHUD.cpp">
       <Filter>HUD</Filter>
     </ClCompile>
+    <ClCompile Include="TestGameMode.cpp">
+      <Filter>GameMode</Filter>
+    </ClCompile>
+    <ClCompile Include="MyVertex.cpp">
+      <Filter>GameMode\MyVertex</Filter>
+    </ClCompile>
+    <ClCompile Include="MyRenderer.cpp">
+      <Filter>GameMode\MyVertex</Filter>
+    </ClCompile>
+    <ClCompile Include="Polygon.cpp">
+      <Filter>GameMode\MyVertex</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GameMode">
@@ -73,14 +97,17 @@
     <Filter Include="Title">
       <UniqueIdentifier>{b8c8ade7-800f-4020-890f-43e613f26276}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Render">
-      <UniqueIdentifier>{00b22cb0-38ad-4f90-9885-863b07f1e2f0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GUI">
       <UniqueIdentifier>{15aa3c0d-7b41-4e15-93c0-0228acabc02d}</UniqueIdentifier>
     </Filter>
     <Filter Include="HUD">
       <UniqueIdentifier>{2fc0cad0-7fd5-46fe-876b-90d7d52a5dc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{00b22cb0-38ad-4f90-9885-863b07f1e2f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameMode\MyVertex">
+      <UniqueIdentifier>{5c33d71b-974b-46cb-9b1c-ee95cc18240e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
