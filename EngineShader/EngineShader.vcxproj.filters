@@ -13,7 +13,7 @@
     <FxCompile Include="EngineTargetMergeShader.fx">
       <Filter>Target</Filter>
     </FxCompile>
-    <FxCompile Include="MyShader.fx">
+    <FxCompile Include="..\ContentsShader\MyShader.fx">
       <Filter>2D</Filter>
     </FxCompile>
   </ItemGroup>

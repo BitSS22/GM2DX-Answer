@@ -1,6 +1,7 @@
 #include "PreCompile.h"
 #include "MyVertex.h"
 
+UEngineInputLayOutInfo MyVertex::Info = {};
 
 class MyVertexInit
 {

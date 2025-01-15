@@ -124,32 +124,3 @@ float4 TileMap_PS(VertexShaderOutPut _Vertex) : SV_Target0
 };
 
 
-
-
-
-struct MyVertex
-{
-    float4 POSITION : SV_POSITIONT;
-    float4 COLOR : SV_COLOR;
-};
-
-struct MyVertexOutPut
-{
-    float4 SVPOSITION : SV_POSITION;
-    float4 COLOR : SV_COLOR;
-};
-
-MyVertexOutPut MyVertexShader_VS(MyVertex _Vertex)
-{
-    MyVertexOutPut OutPut;
-	
-    OutPut.SVPOSITION = mul(_Vertex.POSITION, WVP);
-    OutPut.COLOR = _Vertex.COLOR;
-	
-    return OutPut;
-}
-
-float4 MyPixelShader_PS(MyVertexOutPut _Vertex) : SV_Target0
-{
-    return _Vertex.COLOR;
-};

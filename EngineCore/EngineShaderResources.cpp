@@ -22,6 +22,18 @@ void UEngineShaderResources::CreateSamplerRes(std::string_view _Name, UEngineSam
 
 	SamplerRes[UpperString] = _Res;
 }
+void UEngineShaderResources::Reset()
+{
+	for (std::pair<const std::string, UEngineTextureRes>& Res : TextureRes)
+	{
+		Res.second.Reset();
+	}
+
+	for (std::pair<const std::string, UEngineSamplerRes>& Res : SamplerRes)
+	{
+		Res.second.Reset();
+	}
+}
 
 void UEngineShaderResources::CreateTextureRes(std::string_view _Name, UEngineTextureRes _Res)
 {

@@ -10,6 +10,27 @@ UEngineSampler::~UEngineSampler()
 {
 }
 
+void UEngineSampler::Reset(EShaderType _Type, UINT _BindIndex)
+{
+	ID3D11SamplerState* ArrPtr[1] = { nullptr };
+
+	switch (_Type)
+	{
+	case EShaderType::VS:
+		UEngineCore::GetDevice().GetContext()->VSSetSamplers(_BindIndex, 1, ArrPtr);
+		break;
+	case EShaderType::PS:
+		UEngineCore::GetDevice().GetContext()->PSSetSamplers(_BindIndex, 1, ArrPtr);
+		break;
+	case EShaderType::HS:
+	case EShaderType::DS:
+	case EShaderType::GS:
+	case EShaderType::CS:
+	default:
+		MSGASSERT("아직 존재하지 않는 쉐이더에 세팅하려고 했습니다.");
+		break;
+	}
+}
 
 
 std::shared_ptr<UEngineSampler> UEngineSampler::Create(std::string_view _Name, const D3D11_SAMPLER_DESC& _Value)

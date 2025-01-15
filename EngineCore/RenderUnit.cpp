@@ -227,7 +227,7 @@ void URenderUnit::Render(class UEngineCamera* _Camera, float _DeltaTime)
 
 	Material->GetDepthStencilState()->Setting();
 
-	UEngineCore::GetDevice().GetContext()->DrawIndexed(Mesh->GetIndexBuffer()->GetIndexCount(), 0, 0);
+	UEngineCore::GetDevice().GetContext()->DrawIndexed(Mesh->GetIndexBuffer()->GetIndexCount(),  0, 0);
 }
 
 void URenderUnit::InputLayOutCreate()
@@ -244,4 +244,12 @@ void URenderUnit::InputLayOutCreate()
 		&InputLayOut);
 
 	int a = 0;
+}
+
+void URenderUnit::Reset()
+{
+	for (std::pair<const EShaderType, UEngineShaderResources>& Pair : Resources)
+	{
+		Pair.second.Reset();
+	}
 }

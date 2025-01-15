@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <FxCompile Include="..\ContentsShader\MyShader.fx" />
     <FxCompile Include="EngineDebugCollisionShader.fx" />
     <FxCompile Include="EngineSpriteShader.fx" />
     <FxCompile Include="EngineTargetMergeShader.fx" />
     <FxCompile Include="EngineTileMapShader.fx" />
-    <FxCompile Include="MyShader.fx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

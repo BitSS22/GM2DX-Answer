@@ -20,6 +20,7 @@ public:
 	static std::shared_ptr<UEngineSampler> Create(std::string_view _Name, const D3D11_SAMPLER_DESC& _Value);
 
 	void Setting(EShaderType _Type, UINT _BindIndex);
+	void Reset(EShaderType _Type, UINT _BindIndex);
 
 protected:
 	void ResCreate(const D3D11_SAMPLER_DESC& _Value);
